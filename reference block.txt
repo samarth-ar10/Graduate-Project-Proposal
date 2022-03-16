@@ -1,0 +1,6 @@
+\begin{figure}[H]
+    \centering
+	\includegraphics[width=\columnwidth]{example-image}
+	\caption{This is a sample figure.}
+	\label{fig:fig1}
+\end{figure}

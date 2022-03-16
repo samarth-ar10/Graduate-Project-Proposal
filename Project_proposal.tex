@@ -1,0 +1,112 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{lipsum}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{natbib}
+\usepackage[font=small]{caption}
+\addtolength{\abovecaptionskip}{-3mm}
+\addtolength{\textfloatsep}{-5mm}
+\setlength\columnsep{20pt}
+
+\usepackage[a4paper,left=1.50cm, right=1.50cm, top=1.50cm, bottom=1.50cm]{geometry}
+\usepackage[compact]{titlesec}
+\titlespacing*{\section}{0pt}{4pt}{4pt}
+\titlespacing*{\subsection}{0pt}{4pt}{4pt}
+\titlespacing*{\subsubsection}{0pt}{4pt}{4pt}
+
+\author{}
+
+\title{Project Proposal Graduate Study}
+
+\begin{document}
+	
+	\begin{center}
+		{\Large \textbf{Project Proposal Graduate Study}}\\
+		\vspace{1em}
+		{\large \textbf{\textit{Relational Analysis within Field of Vision of a User for Efficient Augmented Information Overlay}}}\\
+		\vspace{1em}
+		{\large SAMARTH}\\
+% 		\vspace{1em}
+% 		\textit{Affiliation}
+	\end{center}
+	
+
+	\begin{center}
+		\rule{150mm}{0.2mm}
+	\end{center}		
+
+	\begin{abstract}
+	
+	In an Augmented Reality, additional information presented to a user draws the attention of the said user away from the elements of the environment. If such Augmented Information is not formatted and adjusted following the changes within the environment, a perception of 2 separate realities is formed. When this happens, the user creates a distinction between the elements of the real-world and virtual world thereby making the Augmented Reality method used an inefficient method. Unless an illusion is created wherein a user is not able to distinguish between real-world and virtual world, making up the Augmented Reality, the system cannot be deemed efficient.
+
+The purpose of this project would be to capture the Field of Vision of the user along with a one to one related data of what the user focuses on in the said Field of Vision, in real-time, and create a relational logic of what would be deemed relevant to the user when a dataset is picked at random. Such an understanding would help in finding important information within a user's field of view and assigning anchors to them which would help attach Virtual Information more efficiently. This method would also help detach Information Overlay from the user's perspective and make it dependent on the environment thereby making it dynamic and helping them seem more realistic. Furthermore, using such a method could also help present Information in a more safe environment because the relational understanding would help identify the degree of concentration the user is presenting to the changes in the real world elements and prevent Information overlay in critically dangerous situations.
+	
+% 	\textbf{Collaborators}: list the names and affiliations of expected collaborators on the project here
+	\end{abstract}
+
+	\begin{center}
+		\rule{150mm}{0.2mm}
+	\end{center}		
+
+	\vspace{5mm}
+	
+\begin{multicols*}{2}
+
+\section{Introduction}
+
+% \subsection{Inspiration} 
+
+My major interest in Computer Science has been directed towards the implementation of information technology in the field of Robotics. During my journey of exploring Computer Science and Robotics, I noticed that people recognize robots not because of their metallic structure but because of the nature of the robot's manner of interaction. To them, the robots don't mimic a living organism. They don't feel natural. As the seed of this thought process grew within me, I began to understand the reason behind this phenomenon.
+As engineers, we make robots imitate a movement or an interaction based on our perception of how it is supposed to be. The feeling of robots being disconnected from the world of the living is because of this approach. Everyone views their environment differently but in this approach, as problem-solving engineers we are, we sought to solve the issue by using the basic similarities among everyone's point of view and using that as a standard. That's what detached it from the world of the living. 
+With the advancement of Machine Learning, I sought to pave a path that combines the ingenuity of engineers and artists by helping to make an environment, where personalized perceptions of a user can be derived and the Augmented Information presented would not be limited to alerts and messages but actual animatronics reacting to the user's environment based on the user's point of view and later transcribing this learning to real-world robots thereby blurring the line in our perception of robots. Whether they are real or not. Whether they are human or machines. 
+\section{Approach} 
+The Project will make use of Augmented Reality Glasses (ARG) to capture the required data. The idea here is to use custom hardware in the form of glasses, ARG, to capture the view of the user and track the eyes of the said user in real-time. Once such a data set is created, each frame of the captured dataset would be analyzed to extract features including but not limited to:
+\begin{itemize}
+\itemsep0em
+    \item the shape of the object in the user's field of view.
+    \item the color of the object in the user's field of view.
+    \item identifying object the user focuses on in the given frame.
+    \item the pattern used by the user to identify an object in a given frame.
+\end{itemize}
+After the information capture and identification is completed, anchor points will be identified on a live data stream and virtual information will be attached to these anchor points. Once such anchors are in the Field of View (FOV) of the user, the information will be displayed and the user's reaction to the given information will be captured to understand the degree of distraction being created while delivering the information. Such an approach would help us understand the deviations caused by the user's actions because of the presented information and adjust the delivery method in a manner that would be more natural and beneficial to the user.
+\subsection{Augmented Reality Glasses (ARG)}
+The ARG used for this proposal will be custom made but the hardware aspect of the said ARG is not part of this proposal. The ARG used is intended to be in its prototype form by June-July, 2022. During the graduate study, the hardware development of the ARG is intended to be progressed through a startup approach.
+The hardware intended to be used will include 4-6 esp32s2 MCU which will be used to capture and augment information in real-time while 1-2 arm based MPU (STM32MP157 / AM3358) will be used to capture the data from the MCU's data stream, analyze it, attach anchors within it, and provide augmented element information. Further reference to the project can be found on \href{https://fenrir-so.tech/}{fenrir-so.tech} or \href{https://github.com/samarth-ar10/AR_Glasses}{github- samarth-ar10/AR_Glasses}.
+\subsection{Project Blueprint}
+\subsubsection{Algorithm to Capturing Relevant Information [3 months]}
+The hardware will be able to provide the user's FOV along with the user's area of focus. The Algorithm, at this point, will be aimed at extracting features from the images including but not limited to shape, size, color, depth, etc. This would then be used to derive a personalized dataset.
+\subsubsection{Expand Features and segregate dataset [3-5 months]}
+The dataset would be segregated and formatted based on the distance of a feature in a given frame from the Area of Interest of the user in the said frame. This is going to correspond to a degree of attention given to the feature, ranging from high degree( closest to the Area of Interest) to low degree( farthest from Area of Interest). Additionally, more features will be introduced to be extracted and made available in the dataset.
+\subsubsection{Attaching Anchors to set of features [4 months]}
+Objects will be defined corresponding to a set of features and will be used as anchors in a 3d space. These anchors will be responsible to maintain the dynamic nature of the information being provided to the user and help maintain relevance to the FOV of the user by being positioned per the Object and not to the defined 3d map. This would also help reduce local memory requirements as a precise 3d map of the user's environment need not be maintained.
+\subsubsection{Buffer zone [2-3 months]}
+This time is intended to account for any delays being forwarded and additionally provide time to better format the data and expand on any needed elements.
+\subsubsection{Machine Learning Implementation [6 months]}
+There will be 2 models created at this stage to:
+\begin{itemize}
+\itemsep0em
+    \item Efficiently help identify the features available in any given frame in a reduced time.
+    \item Predict the Area of Focus based on the extracted features in a given frame.
+\end{itemize}
+Both these models will be designed to be co-dependent.
+\section{Significance}
+\subsection{Marketing}
+Being able to identify the Objects of Interest in a user's FOV, this project would help facilitate advertisements in a more efficient and palatable manner, opening the doors to a far bigger world of Augmented reality and reducing the cost incurred in physical counterparts.
+\subsection{Safety}
+One of the biggest weaknesses of toady's AR technology is to present information in a manner that is both helpful and less distracting in a dynamic environment. This becomes extremely relevant in critically dangerous conditions. Examples may include, a notification while driving down a road, on-call while crossing a road, etc. This method will be able to help implement functions that would be able to identify such scenarios and prevent information from being presented in a manner that would completely divert the user's attention from their dynamic environment.
+\subsection{New Paradigm of Art}
+We are in an age which is quickly accepting 3d animations and the craving of being in a new artistic environment is growing by the minute. Art helps people detach from the real world and travel to a place in the imagination of many. This technology is meant to blur that gap by providing means to attach virtual animatronics in a real-world environment opening up a world of art that is just dreamt of for now. Examples may include having a whole city as a movie set, where people travel following the characters of their choosing expanding the form of storytelling, and providing an explosive environment for a new form of art to emerge.
+\subsection{Giving a Personal Touch}
+Given that every user will personalize their trained model. Information including but not limited to animatronics can be formulated to react based on the person's penalization giving a more realistic attachment to the user and helping in the acceptance of the technology.
+
+\end{multicols*}
+	
+\end{document}
